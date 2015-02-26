@@ -21,7 +21,7 @@
       // Copy
       playText: 'Let\'s play some Tetris',
       playButtonText: 'Play',
-      gameOverText: 'Game Over',
+      gameOverText: 'Game Over!!</br></br>You scored',
       restartButtonText: 'Play Again',
       scoreText: 'Score',
       levelText: 'Level',
@@ -187,6 +187,7 @@
     _$scoreText: null,
     _$level: null,
     _$levelText: null,
+    _$gameOverText: null,
 
     // lines counter?
     _$totalLines: 0,
@@ -655,12 +656,14 @@
           var lev = this.level;
           if(this.level > 1){game.options.speed = (lev * 2) + 10;}
           game._$scoreText.text(this.score);
+          game._$gameOverText.text(this.score + ' points!');
           game._$levelText.text(this.level);
           game.options.onLine.call(game.element, numLines, scores[numLines], this.score);
         },
         _resetScore: function() {
           this.score = 0;
           game._$scoreText.text(this.score);
+          game._$gameOverText.text(this.score);
         },
         _resetLevel: function() {
           this.level = 1;
@@ -992,9 +995,12 @@
         '<div class="blockrain-game-over-holder" style="position:absolute;">'+
           '<div class="blockrain-game-over">'+
             '<div class="blockrain-game-over-msg">'+ this.options.gameOverText +'</div>'+
+            '<div class="blockrain-game-over-num">0 points!</div>'+
             '<a class="blockrain-btn blockrain-game-over-btn">'+ this.options.restartButtonText +'</a>'+
           '</div>'+
         '</div>').hide();
+      game._$gameOverText = game._$gameover.find('.blockrain-game-over-num');
+      game._$gameholder.append(game._$gameover);
       game._$gameover.find('.blockrain-game-over-btn').click(function(event){
         event.preventDefault();
         game.restart();

@@ -92,7 +92,7 @@
   transform: translateY(-50%);
 }
 
-.blockrain-start-msg, .blockrain-game-over-msg {
+.blockrain-start-msg, .blockrain-game-over-msg, .blockrain-game-over-num {
   font-size: 18px;
   margin-bottom: 30px;
 }
