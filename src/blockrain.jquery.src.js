@@ -13,8 +13,10 @@
       autoBlockWidth: false, // The blockWidth is dinamically calculated based on the autoBlockSize. Disabled blockWidth. Useful for responsive backgrounds
       autoBlockSize: 24, // The max size of a block for autowidth mode
       difficulty: 'normal', // Difficulty (normal|nice|evil).
-      speed: 20, // The speed of the game. The higher, the faster the pieces go.
+      speed: 10, // The speed of the game. The higher, the faster the pieces go.
       asdwKeys: true, // Enable ASDW keys
+
+
 
       // Copy
       playText: 'Let\'s play some Tetris',
@@ -22,6 +24,7 @@
       gameOverText: 'Game Over',
       restartButtonText: 'Play Again',
       scoreText: 'Score',
+      levelText: 'Level',
 
       // Basic Callbacks
       onStart: function(){},
@@ -55,6 +58,7 @@
     _doStart: function() {
       this._filled.clearAll();
       this._filled._resetScore();
+      this._filled._resetLevel();
       this._board.cur = this._board.nextShape();
       this._board.started = true;
       this._board.gameover = false;
@@ -63,6 +67,7 @@
       this._$start.fadeOut(150);
       this._$gameover.fadeOut(150);
       this._$score.fadeIn(150);
+      this._$level.fadeIn(150);
     },
 
 
@@ -180,6 +185,12 @@
     _$gameover: null,
     _$score: null,
     _$scoreText: null,
+    _$level: null,
+    _$levelText: null,
+
+    // lines counter?
+    _$totalLines: 0,
+
 
 
     // Canvas
@@ -435,6 +446,12 @@
               this.orientation = orientation;
             }
           },
+          dropBottom: function() {
+            var i=0;
+            while(!game._checkCollisions(this.x,this.y+(i+1),this.getBlocks())) {
+              i+=1;}
+            this.y=this.y+i;
+          },
           moveRight: function() {
             if (!game._checkCollisions(this.x + 1, this.y, this.getBlocks())) {
               this.x++;
@@ -628,17 +645,27 @@
         },
         _updateScore: function(numLines) {
           if( numLines <= 0 ) { return; }
-          var scores = [0,400,1000,3000,12000];
+          var scores = [0,400,900,2500,6000];
+          game._$totalLines += numLines;
           if( numLines >= scores.length ){ numLines = scores.length-1 }
+          console.log(game._$totalLines);
 
           this.score += scores[numLines];
+          this.level = Math.floor(this.score/1000) + 1;
+          var lev = this.level;
+          if(this.level > 1){game.options.speed = (lev * 2) + 10;}
           game._$scoreText.text(this.score);
-
+          game._$levelText.text(this.level);
           game.options.onLine.call(game.element, numLines, scores[numLines], this.score);
         },
         _resetScore: function() {
           this.score = 0;
           game._$scoreText.text(this.score);
+        },
+        _resetLevel: function() {
+          this.level = 1;
+          game._$levelText.text(this.level);
+          game.options.speed = 10;
         },
         draw: function() {
           for (var i=0, len=this.data.length, row, color; i<len; i++) {
@@ -934,6 +961,17 @@
       game._$scoreText = game._$score.find('.blockrain-score-num');
       game._$gameholder.append(game._$score);
 
+      // Level ADDED BY ME
+      game._$level = $(
+        '<div class="blockrain-level-holder" style="position:absolute;">'+
+          '<div class="blockrain-level">'+
+            '<div class="blockrain-level-msg">'+ this.options.levelText +'</div>'+
+            '<div class="blockrain-level-num">1</div>'+
+          '</div>'+
+        '</div>').hide();
+      game._$levelText = game._$level.find('.blockrain-level-num');
+      game._$gameholder.append(game._$level);
+
       // Create the start menu
       game._$start = $(
         '<div class="blockrain-start-holder" style="position:absolute;">'+
@@ -1124,6 +1162,7 @@
           caught = true;
           if (game.options.asdwKeys) {
             switch(evt.keyCode) {
+              case 32: /*space*/ game._board.cur.dropBottom(); break; //DROP
               case 65: /*a*/   game._board.cur.moveLeft(); break;
               case 87: /*w*/     game._board.cur.rotate(true); break;
               case 68: /*d*/  game._board.cur.moveRight(); break;
@@ -1131,6 +1170,7 @@
             }
           }
           switch(evt.keyCode) {
+            case 32: /*space*/ game._board.cur.dropBottom(); break; //DROP
             case 37: /*left*/   game._board.cur.moveLeft(); break;
             case 38: /*up*/     game._board.cur.rotate(true); break;
             case 39: /*right*/  game._board.cur.moveRight(); break;

@@ -1,0 +1,241 @@
+html,body{
+	background:#3b3d3b;
+	padding:0;
+	margin:0;
+	font-family:"Play", "Helvetica Neue", "Arial", sans-serif;
+	font-weight:normal;
+	line-height:160%;
+	font-size:16px;
+	color:#fff
+}
+
+html{
+	font-family:sans-serif;
+	-ms-text-size-adjust:100%;
+-webkit-text-size-adjust:100%;
+}
+
+
+body{
+	margin:0;
+}
+
+
+
+article,aside,details,figcaption,figure,footer,header,hgroup,main,nav,section,summary{
+	display:block;
+}
+
+
+
+audio,canvas,progress,video{
+	display:inline-block;
+	vertical-align:baseline;
+}
+
+code,kbd,pre,samp{
+	font-family:monospace, monospace;
+	font-size:1em
+	}
+
+
+
+button,input,optgroup,select,textarea{
+		color:inherit;
+	font:inherit;
+margin:0
+}
+
+
+/*body {
+	background-color: white;
+	font-family: helvetica, arial, sans-serif;
+}*/
+
+#header {
+	text-align: center;
+}
+
+#gamecontainer {
+	text-align: center;
+}
+
+.game {
+
+}
+
+#theme-slider {
+	background:#000;
+	width:700px;
+	height:600px;
+	border-radius:50%/5%;
+	position:relative;
+	margin:0 auto;
+	color: white;
+}
+
+#theme-slider:before {
+	content:"";
+	background:#000;
+	position:absolute;
+	top:5%;
+	bottom:5%;
+	left:-5%;
+	right:-5%;
+	border-radius:5%/50%;
+}
+
+
+.arcade{
+	padding:50px 0 0 0;
+	color:#c2ffad;
+	position:relative
+}
+
+
+.arcade .game{
+	display:inline-block;
+	margin:0px 20px;
+	width:200px;
+	height:330px;
+	position:static
+}
+
+.arcade .game .blockrain-score-holder{
+	left:100%;
+	top:-10px;
+	right:auto;
+	text-align:left;
+	margin-left:55px;
+	font-size:14px;
+	color:#c2ffad;
+	line-height:20px
+}
+
+
+.arcade .game .blockrain-score-holder .blockrain-score-num{
+	font-size:24px;
+	font-weight:normal
+}
+
+
+
+.arcade .game .blockrain-start,.arcade .game .blockrain-game-over{
+	top:auto;
+	transform:none;
+	height:100%
+}
+
+
+.arcade .game .blockrain-start-msg,.arcade .game .blockrain-game-over-msg{
+	color:#c2ffad;
+	font-size:14px;
+	position:absolute;
+	top:-16px;
+	width:100%
+}
+
+
+.arcade .game .blockrain-game-over-msg{
+	top:50%;
+	font-size:24px;
+margin-top:-24px
+}
+
+
+.arcade .game .blockrain-start-btn,.arcade .game .blockrain-game-over-btn{
+	position:absolute;
+	left:100%;
+	bottom:0px;
+	border:none;
+	background:#c2ffad;
+	color:#000;
+	text-transform:uppercase;
+	font-weight:bold;
+	margin-left:55px;
+	width:120px;
+	padding:13px 0;
+	font-size:16px
+}
+
+
+.arcade .game .blockrain-start-btn:before,.arcade .game .blockrain-start-btn:after,.arcade .game .blockrain-game-over-btn:before,.arcade .game .blockrain-game-over-btn:after{
+	display:none
+}
+
+.arcade .level{
+	position:absolute;
+	top:36px;
+	left:150px;
+	font-size:14px;
+	line-height:20px;
+	text-align:left;
+}
+.arcade .level strong{
+	display:block;
+	font-size:24px;
+	font-weight:normal;
+}
+
+.arcade .instructions{
+	position:absolute;
+	color:#c2ffad;
+	bottom:10px;
+	left:50px;
+	overflow:hidden;
+	font-size:14px;
+}
+
+.arcade .instructions .key{
+	border:1px solid #c2ffad;
+	display:block;
+	width:38px;
+	height:38px;
+	float:left;
+	position:relative;
+}
+
+.arcade .instructions .key:before{
+	content:"";
+	display:block;
+	width:14px;
+	height:14px;
+	position:absolute;
+	top:50%;
+	left:50%;
+	margin:-7px 0 0 -7px;
+	background:url(../assets/images/icon-sprite.png) no-repeat;
+	background-position:-84px 0;
+	background-size:auto 100%;
+}
+
+.arcade .instructions .key.key-up{
+	float:none;
+	margin-left:39px;
+	border-bottom:none;
+	margin-top:20px;
+}
+
+.arcade .instructions .key.key-up:before{
+	background-position:-42px 0;
+}
+
+.arcade .instructions .key.key-left:before{
+	background-position:-56px 0;
+}
+
+.arcade .instructions .key.key-down{
+	border-left:none;
+	border-right:none;
+}
+
+.arcade .instructions .key.key-down:before{
+	background-position:-70px 0;
+}
+
+/*.arcade .instructions{
+	display:none;
+}*/
+
+
+
