@@ -188,7 +188,7 @@
     _$level: null,
     _$levelText: null,
     _$gameOverText: null,
-    _$tenMinutes: 60*10,
+    _$timeLimit: 60*7,
 
     // lines counter?
     _$totalLines: 0,
@@ -822,7 +822,7 @@
           if( gameOver ) {
 
             this.gameover = true;
-            if (game._$tenMinutes < 0) {
+            if (game._$timeLimit < 0) {
               game.gameover();
               $(".timer").css("visibility", "hidden");
               $(".overlay").css("visibility", "visible");
@@ -1000,18 +1000,18 @@
           mins,seconds;
 
         var timinterval = setInterval(function() {
-          mins = parseInt(game._$tenMinutes / 60);
-          seconds = parseInt(game._$tenMinutes % 60);
+          mins = parseInt(game._$timeLimit / 60);
+          seconds = parseInt(game._$timeLimit % 60);
           seconds = (seconds < 10) ? "0" + seconds : seconds;
 
           display.html("Time remaining: </br><strong>" + mins + ":" + seconds + "</strong>");
-          game._$tenMinutes--;
+          game._$timeLimit--;
 
-          if (game._$tenMinutes < 60) {
+          if (game._$timeLimit < 60) {
             display.css("color","red");
           }
 
-          if (game._$tenMinutes < 0) {
+          if (game._$timeLimit < 0) {
             clearInterval(timinterval);
           }
         },1000);
