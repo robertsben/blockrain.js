@@ -41,16 +41,25 @@ code,kbd,pre,samp{
 
 
 button,input,optgroup,select,textarea{
-		color:inherit;
+	color:inherit;
 	font:inherit;
-margin:0
+	margin:0
 }
 
 
-/*body {
-	background-color: white;
-	font-family: helvetica, arial, sans-serif;
-}*/
+.overlay {
+    position:absolute;
+    text-align: center;
+    top:0;
+    left:0;
+    right:0;
+    bottom:0;
+    background-color:rgba(0, 0, 0, 0.90);
+    background: url(data:;base64,iVBORw0KGgoAAAANSUhEUgAAAAIAAAACCAYAAABytg0kAAAAAXNSR0IArs4c6QAAAARnQU1BAACxjwv8YQUAAAAgY0hSTQAAeiYAAICEAAD6AAAAgOgAAHUwAADqYAAAOpgAABdwnLpRPAAAABl0RVh0U29mdHdhcmUAUGFpbnQuTkVUIHYzLjUuNUmK/OAAAAATSURBVBhXY2RgYNgHxGAAYuwDAA78AjwwRoQYAAAAAElFTkSuQmCC) repeat scroll transparent\9; /* ie fallback png background image */
+    z-index:9999;
+    color:white;
+    visibility: hidden;
+}
 
 #header {
 	text-align: center;
@@ -196,6 +205,20 @@ margin:0
 	text-align:left;
 }
 .arcade .level strong{
+	display:block;
+	font-size:24px;
+	font-weight:normal;
+}
+
+.arcade .timer{
+	position:absolute;
+	color:#c2ffad;
+	bottom:50%;
+	left:60px;
+	overflow:hidden;
+	font-size:14px;
+}
+.arcade .timer strong{
 	display:block;
 	font-size:24px;
 	font-weight:normal;

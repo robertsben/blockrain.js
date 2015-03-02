@@ -188,6 +188,7 @@
     _$level: null,
     _$levelText: null,
     _$gameOverText: null,
+    _$tenMinutes: 60*10,
 
     // lines counter?
     _$totalLines: 0,
@@ -821,8 +822,14 @@
           if( gameOver ) {
 
             this.gameover = true;
-
-            game.gameover();
+            if (game._$tenMinutes < 0) {
+              game.gameover();
+              $(".timer").css("visibility", "hidden");
+              $(".overlay").css("visibility", "visible");
+            } else {
+              game.gameover();
+            }
+            
 
             if( game.options.autoplay && game.options.autoplayRestart ) {
               // On autoplay, restart the game automatically
@@ -988,6 +995,26 @@
       game._$start.find('.blockrain-start-btn').click(function(event){
         event.preventDefault();
         game.start();
+
+        var display = $('.timer'),
+          mins,seconds;
+
+        var timinterval = setInterval(function() {
+          mins = parseInt(game._$tenMinutes / 60);
+          seconds = parseInt(game._$tenMinutes % 60);
+          seconds = (seconds < 10) ? "0" + seconds : seconds;
+
+          display.html("Time remaining: </br><strong>" + mins + ":" + seconds + "</strong>");
+          game._$tenMinutes--;
+
+          if (game._$tenMinutes < 60) {
+            display.css("color","red");
+          }
+
+          if (game._$tenMinutes < 0) {
+            clearInterval(timinterval);
+          }
+        },1000);
       });
 
       // Create the game over menu
