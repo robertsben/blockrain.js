@@ -16,25 +16,27 @@ window.BlockrainThemes = {
     }
   },
   'candymod': {
-    background: '#86f5ff',
-    backgroundGrid: 'data:image/png;base64,iVBORw0KGgoAAAANSUhEUgAAAB4AAAAeAQMAAAAB/jzhAAAACXBIWXMAAAsTAAALEwEAmpwYAAAAB3RJTUUH3wMCEgcF4pyjVwAAAAZQTFRFJ0BghvX/fWq+TAAAABdJREFUCNdj+P///x8Giogf9ZgEhYYCAFBTdROypWAIAAAAAElFTkSuQmCC',
+    background: '#e6f8ff',
+    backgroundGrid: 'data:image/png;base64,iVBORw0KGgoAAAANSUhEUgAAAB4AAAAeAQMAAAAB/jzhAAAACXBIWXMAAAsTAAALEwEAmpwYAAAAB3RJTUUH3wMCEysbIGCfrQAAAAZQTFRFAAAA5vj/+W+R5QAAABdJREFUCNdj+P///x8Giogf9ZgEhYYCAFBTdROypWAIAAAAAElFTkSuQmCC',
+    //backgroundGrid: 'data:image/png;base64,iVBORw0KGgoAAAANSUhEUgAAAB4AAAAeAQMAAAAB/jzhAAAACXBIWXMAAAsTAAALEwEAmpwYAAAAB3RJTUUH3wMCEwsnmovHiAAAAAZQTFRFJ0Bgt/n/9HZ+5wAAABdJREFUCNdj+P///x8Giogf9ZgEhYYCAFBTdROypWAIAAAAAElFTkSuQmCC',
+    //backgroundGridsky: 'data:image/png;base64,iVBORw0KGgoAAAANSUhEUgAAAB4AAAAeAQMAAAAB/jzhAAAACXBIWXMAAAsTAAALEwEAmpwYAAAAB3RJTUUH3wMCEgcF4pyjVwAAAAZQTFRFJ0BghvX/fWq+TAAAABdJREFUCNdj+P///x8Giogf9ZgEhYYCAFBTdROypWAIAAAAAElFTkSuQmCC',
     //backgroundGrid4: 'data:image/png;base64,iVBORw0KGgoAAAANSUhEUgAAAB4AAAAeAQMAAAAB/jzhAAAACXBIWXMAAAsTAAALEwEAmpwYAAAAB3RJTUUH3wMCETc2gExK6wAAAAZQTFRFJ0BgQsbwjxj4cQAAABdJREFUCNdj+P///x8Giogf9ZgEhYYCAFBTdROypWAIAAAAAElFTkSuQmCC',
     //backgroundGrid3: 'data:image/png;base64,iVBORw0KGgoAAAANSUhEUgAAAB4AAAAeAQMAAAAB/jzhAAAACXBIWXMAAAsTAAALEwEAmpwYAAAAB3RJTUUH3wMCETMvgEsnLwAAAAZQTFRFAP/7J0Bgvq2R3QAAABFJREFUCNdjYKAYsDdgEhQCAJ3YAh3M5wO3AAAAAElFTkSuQmCC',
     //backgroundGrid2: 'data:image/png;base64,iVBORw0KGgoAAAANSUhEUgAAAB4AAAAeAQMAAAAB/jzhAAAACXBIWXMAAAsTAAALEwEAmpwYAAAAB3RJTUUH3wMCETEwP3VIWAAAAAZQTFRFJ0Bgcr/pMeV3ngAAABdJREFUCNdj+P///x8Giogf9ZgEhYYCAFBTdROypWAIAAAAAElFTkSuQmCC',
     //backgroundGrid: 'data:image/png;base64,iVBORw0KGgoAAAANSUhEUgAAAB4AAAAeAQMAAAAB/jzhAAAACXBIWXMAAAsTAAALEwEAmpwYAAAAB3RJTUUH3wMCESwNmHFoVQAAAAZQTFRFJ0BgSL7/9daTyAAAABdJREFUCNdj+P///x8Giogf9ZgEhYYCAFBTdROypWAIAAAAAElFTkSuQmCC',
     primary: null,
     secondary: null,
-    stroke: '#86f5ff',
+    stroke: '#e6f8ff',
     strokeWidth: 2,
     innerStroke: null,
     blocks: {
-      line:     '#fa1e1e',
-      square:   '#f1fa1e',
-      arrow:    '#d838cb',
-      rightHook:'#f5821f',
-      leftHook: '#42c6f0',
-      rightZag: '#4bd838',
-      leftZag:  '#fa1e1e'
+      line:     '#0033CC',
+      square:   '#FF0000',
+      arrow:    '#E60066',
+      rightHook:'#00CC00',
+      leftHook: '#FF6600',
+      rightZag: '#990099',
+      leftZag:  '#009999'
     }
   },
   'modern': {

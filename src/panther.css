@@ -164,13 +164,13 @@ button,input,optgroup,select,textarea{
 
 
 .arcade .game .blockrain-game-over-msg{
-	top:50%;
+	top:40%;
 	font-size:24px;
 	margin-top:-24px
 }
 
 .arcade .game .blockrain-game-over-num{
-	top:50%;
+	top:40%;
 	font-size: 24px;
 	margin-top: 58px;
 }

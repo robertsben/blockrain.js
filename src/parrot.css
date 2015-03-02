@@ -15,7 +15,16 @@
 		orange: e8a23d
 		red: ff654a
 		;
-		*/
+
+    dark: 
+	    green; #349727;00CC00;
+	    orange: #FF6600;
+	    blue: #00248E;0033CC;
+	    red: #B20000;FF0000
+	    purple: #6B006B;990099
+	    magenta: #E60066;
+	    turquoise: #006B6B;009999
+    */
 
 
 html,body{
@@ -184,13 +193,13 @@ button,input,optgroup,select,textarea{
 
 
 .arcade .game .blockrain-game-over-msg{
-	top:50%;
+	top:40%;
 	font-size:24px;
 	margin-top:-24px
 }
 
 .arcade .game .blockrain-game-over-num{
-	top:50%;
+	top:40%;
 	font-size: 24px;
 	margin-top: 58px;
 }
