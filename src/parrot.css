@@ -183,8 +183,16 @@ button,input,optgroup,select,textarea{
 }
 
 
-.arcade .game .blockrain-start-msg,.arcade .game .blockrain-game-over-msg,.arcade .game .blockrain-game-over-num{
-	color:#FF6600;;
+.arcade .game .blockrain-start-msg{
+	color:#ff6600;
+	font-size:14px;
+	position:absolute;
+	top:-16px;
+	width:100%
+}
+
+.arcade .game .blockrain-game-over-msg,.arcade .game .blockrain-game-over-num{
+	color:#006eff;
 	font-size:14px;
 	position:absolute;
 	top:-16px;

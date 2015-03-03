@@ -188,7 +188,7 @@
     _$level: null,
     _$levelText: null,
     _$gameOverText: null,
-    _$timeLimit: 60*7,
+    _$timeLimit: 60 * 7,
 
     // lines counter?
     _$totalLines: 0,
@@ -820,12 +820,12 @@
           }
 
           if( gameOver ) {
-
+            //ASDFGHJKL
             this.gameover = true;
             if (game._$timeLimit < 0) {
               game.gameover();
               $(".timer").css("visibility", "hidden");
-              $(".overlay").css("visibility", "visible");
+              $(".overlay").css({opacity: 0.0, visibility: "visible"}).delay(1000).animate({opacity: 1.0, speed: 4000});
             } else {
               game.gameover();
             }
@@ -1006,9 +1006,9 @@
 
           display.html("Time remaining: </br><strong>" + mins + ":" + seconds + "</strong>");
           game._$timeLimit--;
-
-          if (game._$timeLimit < 60) {
-            display.css("color","red");
+          if (game._$timeLimit < 60 && game._$timeLimit > 58) {
+            display.css({color:"red"}).fadeOut(400).fadeIn(400).fadeOut(400).fadeIn(400);
+            flashed = true;
           }
 
           if (game._$timeLimit < 0) {
