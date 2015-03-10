@@ -191,6 +191,17 @@ button,input,optgroup,select,textarea{
 	font-size:16px
 }
 
+.blockrain-start-holder, .blockrain-game-over-holder {
+  position: absolute;
+  top: 0;
+  left: 0;
+  right: 0;
+  bottom: 0;
+
+  background: rgba(0,0,0,0.8);
+  text-align: center;
+}
+
 
 .arcade .game .blockrain-start-btn:before,.arcade .game .blockrain-start-btn:after,.arcade .game .blockrain-game-over-btn:before,.arcade .game .blockrain-game-over-btn:after{
 	display:none
