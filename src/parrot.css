@@ -28,7 +28,7 @@
 
 
 html,body{
-	background:#FFFF14;
+	background:#FFFF2B;
 	padding:0;
 	margin:0;
 	font-family:"Play", "Helvetica Neue", "Arial", sans-serif;
@@ -126,7 +126,7 @@ button,input,optgroup,select,textarea{
 
 .arcade{
 	padding:50px 0 0 0;
-	color:#FF6600;
+	color:#FFFF2B;
 	position:relative
 }
 
@@ -146,7 +146,7 @@ button,input,optgroup,select,textarea{
 	text-align:left;
 	margin-left:55px;
 	font-size:14px;
-	color:#FF6600;;
+	color:#FFFF2B;
 	line-height:20px
 }
 
@@ -163,7 +163,7 @@ button,input,optgroup,select,textarea{
 	text-align:right;
 	margin-right:55px;
 	font-size:14px;
-	color:#FF6600;;
+	color:#FFFF2B;
 	line-height:20px
 }
 
@@ -184,7 +184,7 @@ button,input,optgroup,select,textarea{
 
 
 .arcade .game .blockrain-start-msg{
-	color:#ff6600;
+	color:#FFFF2B;
 	font-size:14px;
 	position:absolute;
 	top:-16px;
@@ -201,13 +201,13 @@ button,input,optgroup,select,textarea{
 
 
 .arcade .game .blockrain-game-over-msg{
-	top:40%;
+	top:30%;
 	font-size:24px;
 	margin-top:-24px
 }
 
 .arcade .game .blockrain-game-over-num{
-	top:40%;
+	top:30%;
 	font-size: 24px;
 	margin-top: 58px;
 }
@@ -260,7 +260,7 @@ button,input,optgroup,select,textarea{
 
 .arcade .timer{
 	position:absolute;
-	color:#FF6600;;
+	color:#FFFF2B;;
 	bottom:50%;
 	left:60px;
 	overflow:hidden;
@@ -274,7 +274,7 @@ button,input,optgroup,select,textarea{
 
 .arcade .instructions{
 	position:absolute;
-	color:#FF6600;;
+	color:#FFFF2B;;
 	bottom:10px;
 	left:50px;
 	overflow:hidden;

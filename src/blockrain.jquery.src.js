@@ -654,7 +654,7 @@
           this.score += scores[numLines];
           this.level = Math.floor(this.score/1000) + 1;
           var lev = this.level;
-          if(this.level > 1){game.options.speed = (lev * 2) + 10;}
+          if(this.level > 1){game.options.speed = ((lev - 1) * 2) + 10;}
           game._$scoreText.text(this.score);
           this.score = parseInt(game._$scoreText.text());
           this.beaten = ((Math.pow((this.score/10),1/3)/Math.pow(3000,1/3))*100).toFixed(2);
