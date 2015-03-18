@@ -188,7 +188,7 @@
     _$level: null,
     _$levelText: null,
     _$gameOverText: null,
-    _$timeLimit: 60 * 7,
+    _$timeLimit: 32,
 
     // lines counter?
     _$totalLines: 0,
@@ -831,7 +831,7 @@
             if (game._$timeLimit < 0) {
               game.gameover();
               $(".timer").css("visibility", "hidden");
-              $(".overlay").css({opacity: 0.0, visibility: "visible"}).delay(1000).animate({opacity: 1.0, speed: 4000});
+              $(".overlay").css({opacity: 0.0, visibility: "visible"}).delay(1800).animate({opacity: 1.0, speed: 4000});
             } else if (game._$timeLimit > 20) {
               $(".replay-msg").html("Play again before the countdown timer runs out!");
               $(".replay-msg").css("visibility", "visible");
@@ -1022,15 +1022,21 @@
           seconds = parseInt(game._$timeLimit % 60);
           seconds = (seconds < 10) ? "0" + seconds : seconds;
 
-          display.html("Time remaining: </br><strong>" + mins + ":" + seconds + "</strong>");
+          display.html("Time remaining: </br><strong>" + mins + ":" + seconds + "</strong></br>");
           game._$timeLimit--;
           if (game._$timeLimit < 60 && game._$timeLimit > 58) {
             display.css({color:"red"}).fadeOut(400).fadeIn(400).fadeOut(400).fadeIn(400);
+          }
+          if (game._$timeLimit < 30) {
+            display.css("left","52px");
+            display.css("bottom","41%");
+            display.append("You may finish your current game.");
           }
 
           if (game._$timeLimit < 0) {
             clearInterval(timinterval);
             display.css("left","50px");
+            display.css("bottom","50%");
             display.html("You may finish your current game.");
           }
         },1000);
