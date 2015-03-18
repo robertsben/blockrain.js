@@ -45,6 +45,7 @@
     },
 
     restart: function() {
+      $(".replay-msg").css("visibility", "hidden");
       this._doStart();
       this.options.onRestart.call(this.element);
     },
@@ -69,7 +70,6 @@
       this._$score.fadeIn(150);
       this._$level.fadeIn(150);
     },
-
 
     pause: function() {
       this._board.paused = true;
@@ -661,7 +661,7 @@
           game._$gameOverText = "Game over!</br></br>You scored:</br>" + this.score.toString() + ' points!';
           game._$gameOverText += '</br></br>You beat ' + this.beaten.toString() + '% of players!';
 
-          console.log(game._$gameOverText);
+          
           $( "div.blockrain-game-over-msg" ).html(game._$gameOverText);
           game._$levelText.text(this.level);
           game.options.onLine.call(game.element, numLines, scores[numLines], this.score);
@@ -832,10 +832,22 @@
               game.gameover();
               $(".timer").css("visibility", "hidden");
               $(".overlay").css({opacity: 0.0, visibility: "visible"}).delay(1000).animate({opacity: 1.0, speed: 4000});
+            } else if (game._$timeLimit > 20) {
+              $(".replay-msg").html("Play again before the countdown timer runs out!");
+              $(".replay-msg").css("visibility", "visible");
+              
+              game.gameover();
+              $('.blockrain-game-over-btn').data('bounce',true); bounce($('.blockrain-game-over-btn'));
             } else {
               game.gameover();
             }
             
+            function bounce($elem) {
+            $elem.effect('bounce', { times: 1, distance: 10 }, 1000, function() {
+              if ($(this).data('bounce')) bounce($elem);
+              else $elem.stop();
+              });
+            }
 
             if( game.options.autoplay && game.options.autoplayRestart ) {
               // On autoplay, restart the game automatically
@@ -1014,11 +1026,12 @@
           game._$timeLimit--;
           if (game._$timeLimit < 60 && game._$timeLimit > 58) {
             display.css({color:"red"}).fadeOut(400).fadeIn(400).fadeOut(400).fadeIn(400);
-            flashed = true;
           }
 
           if (game._$timeLimit < 0) {
             clearInterval(timinterval);
+            display.css("left","50px");
+            display.html("You may finish your current game.");
           }
         },1000);
       });
@@ -1034,13 +1047,15 @@
       
       game._$gameOverText = game._$gameover.find('.blockrain-game-over-msg');
       game._$gameholder.append(game._$gameover);
+
+      
       game._$gameover.find('.blockrain-game-over-btn').click(function(event){
         event.preventDefault();
+        $('.blockrain-game-over-btn').data('bounce', false);
         game.restart();
       });
       game._$gameholder.append(game._$gameover);
-
-    },
+      },
 
 
     _refreshBlockSizes: function() {

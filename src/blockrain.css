@@ -56,6 +56,31 @@
   right: -8px;
 }
 
+.arcade .timer{
+  position:absolute;
+  max-width: 17%;
+  bottom:50%;
+  left:60px;
+  overflow:hidden;
+  font-size:14px;
+}
+.arcade .timer strong{
+  display:block;
+  font-size:24px;
+  font-weight:normal;
+}
+
+.arcade .replay-msg{
+  position:absolute;
+  max-width: 17%;
+  bottom:20%;
+  right:50px;
+  overflow:hidden;
+  font-size:14px;
+  visibility: hidden;
+  color: red;
+  font-weight:bold;
+}
 
 /* Score */
 .blockrain-score-holder {
