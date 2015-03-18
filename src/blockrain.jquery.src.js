@@ -188,7 +188,7 @@
     _$level: null,
     _$levelText: null,
     _$gameOverText: null,
-    _$timeLimit: 32,
+    _$timeLimit: 60 * 7,
 
     // lines counter?
     _$totalLines: 0,
