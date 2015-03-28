@@ -788,6 +788,14 @@
 
           return result;
         },
+
+        bounce: function($elem) {
+          $elem.effect('bounce', { times: 1, distance: 10 }, 1000, function() {
+            if ($(this).data('bounce')) game._board.bounce($elem);
+            else $elem.stop();
+          });
+        },
+
         animate: function() {
           var drop = false,
             gameOver = false;
@@ -837,17 +845,12 @@
               $(".replay-msg").css("visibility", "visible");
               
               game.gameover();
-              $('.blockrain-game-over-btn').data('bounce',true); bounce($('.blockrain-game-over-btn'));
+              $('.blockrain-game-over-btn').data('bounce',true); game._board.bounce($('.blockrain-game-over-btn'));
             } else {
               game.gameover();
             }
             
-            function bounce($elem) {
-            $elem.effect('bounce', { times: 1, distance: 10 }, 1000, function() {
-              if ($(this).data('bounce')) bounce($elem);
-              else $elem.stop();
-              });
-            }
+            
 
             if( game.options.autoplay && game.options.autoplayRestart ) {
               // On autoplay, restart the game automatically
@@ -866,6 +869,9 @@
           }
 
         },
+
+
+
         createRandomBoard: function() {
 
           var start = [], blockTypes = [], i, ilen, j, jlen, color;
