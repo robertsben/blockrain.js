@@ -1,6 +1,11 @@
 Blockrain.js
 ============
 
+A modified version of the Blockrain.js game, for use in an experiment conducted as part of my final year project in Computer Science at University of York. 
+
+This version comes complete with levels, an automatic timer, and other custom built features for use in the experiment.
+
+
 A tetris game in HTML5 + Javascript (with autoplay!)
 
 **[Check out the demo](http://aerolab.github.io/blockrain.js/)**
